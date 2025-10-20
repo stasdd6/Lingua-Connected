@@ -13,7 +13,7 @@ body {
 
 /* ===== NAVIGATION ===== */
 .nav {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
   position: fixed;
   top: 0;
   left: 0;
@@ -36,6 +36,44 @@ body {
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: bold;
+  z-index: 1001;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.hamburger {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: #f9d16b;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #f9d16b;
+  transition: all 0.3s ease;
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  bottom: -8px;
 }
 
 .nav-links {
@@ -46,9 +84,10 @@ body {
 .nav-link {
   color: white;
   text-decoration: none;
-  padding: 5px 10px;
+  padding: 8px 16px;
   transition: all 0.3s ease;
   border-radius: 15px;
+  font-weight: 500;
 }
 
 .nav-link:hover {
@@ -59,6 +98,63 @@ body {
 .nav-link.active {
   background: #f9d16b;
   color: #2b1b0f;
+}
+
+/* Мобильная навигация */
+@media (max-width: 768px) {
+  .nav {
+    padding: 10px 0;
+  }
+
+  .nav-container {
+    padding: 0 15px;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 80px 20px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  .nav-link {
+    font-size: 1.2rem;
+    padding: 12px 24px;
+    width: 200px;
+    text-align: center;
+  }
+
+  /* Анимация гамбургера */
+  .nav-toggle.active .hamburger {
+    background: transparent;
+  }
+
+  .nav-toggle.active .hamburger::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  .nav-toggle.active .hamburger::after {
+    transform: rotate(-45deg);
+    bottom: 0;
+  }
 }
 
 /* ===== HERO ===== */
