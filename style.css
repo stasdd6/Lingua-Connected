@@ -6,6 +6,16 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
 body {
   background-color: #f9d16b;
   color: #2b1b0f;
@@ -103,7 +113,7 @@ body {
 /* Мобильная навигация */
 @media (max-width: 768px) {
   .nav {
-    padding: 10px 0;
+    padding: 15px 0;
   }
 
   .nav-container {
@@ -112,6 +122,13 @@ body {
 
   .nav-toggle {
     display: block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
   }
 
   .nav-links {
@@ -126,12 +143,16 @@ body {
     align-items: center;
     gap: 30px;
     padding: 80px 20px;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease;
   }
 
   .nav-links.active {
-    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
 
   .nav-link {
@@ -139,21 +160,55 @@ body {
     padding: 12px 24px;
     width: 200px;
     text-align: center;
+    color: white;
   }
 
   /* Анимация гамбургера */
+  .hamburger,
+  .hamburger::before,
+  .hamburger::after {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #f9d16b;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .hamburger::before {
+    content: '';
+    top: -8px;
+  }
+
+  .hamburger::after {
+    content: '';
+    bottom: -8px;
+  }
+
   .nav-toggle.active .hamburger {
     background: transparent;
   }
 
   .nav-toggle.active .hamburger::before {
-    transform: rotate(45deg);
     top: 0;
+    transform: rotate(45deg);
   }
 
   .nav-toggle.active .hamburger::after {
-    transform: rotate(-45deg);
     bottom: 0;
+    transform: rotate(-45deg);
+  }
+
+  /* Фиксированная шапка при открытом меню */
+  .nav-container {
+    position: relative;
+    z-index: 1001;
   }
 }
 
