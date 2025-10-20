@@ -700,6 +700,7 @@ body {
 }
 
 @media (max-width: 768px) {
+  /* Teacher Info Mobile Styles */
   .teacher-info {
     flex-direction: column;
     text-align: center;
@@ -716,6 +717,67 @@ body {
   
   .contact-info {
     justify-content: center;
+  }
+
+  /* Top 5 Mobile Styles */
+  .top-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px 25px;
+  }
+
+  .top-card img {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+  }
+
+  .top-card .btn {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .top-info {
+    text-align: center;
+  }
+
+  .rating-stars {
+    justify-content: center;
+  }
+
+  /* Navigation Mobile Styles */
+  .nav-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Hero Mobile Styles */
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  /* Tabs Mobile Styles */
+  .rating-tabs {
+    flex-wrap: wrap;
+  }
+
+  .tab {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Container Mobile Styles */
+  .container {
+    padding: 0 15px;
   }
 }
 
