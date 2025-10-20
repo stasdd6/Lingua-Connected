@@ -1,0 +1,229 @@
+/* ===================
+   БАЗОВЫЕ СТИЛИ
+=================== */
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: linear-gradient(135deg, #fbe8c5, #f7d080);
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+h2, h3, h4 {
+  margin: 0 0 10px;
+}
+
+.tp-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  animation: fadeIn 1s ease;
+}
+
+.tp-section {
+  background: #fff;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.tp-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ===================
+   АНИМАЦИИ
+=================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* ===================
+   БЛОК РЕПЕТИТОРА
+=================== */
+.tp-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tp-img {
+  max-width: 180px;
+  border-radius: 15px;
+  transition: transform 0.4s ease;
+}
+
+.tp-img:hover {
+  transform: scale(1.05);
+}
+
+.tp-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #e69a2e, #c76b2c);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.tp-btn:hover {
+  background: linear-gradient(90deg, #c76b2c, #e69a2e);
+  transform: scale(1.05);
+}
+
+/* ===================
+   СПИСКИ
+=================== */
+.tp-list {
+  list-style: none;
+  padding: 0;
+}
+
+.tp-list li {
+  padding: 8px 0;
+  font-size: 16px;
+  position: relative;
+  padding-left: 28px;
+}
+
+.tp-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #2b9348;
+  font-weight: bold;
+}
+
+/* ===================
+   ЦЕНЫ
+=================== */
+.tp-price-box {
+  background: #fdf4e3;
+  padding: 20px;
+  border-radius: 15px;
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.tp-price-box:hover {
+  transform: translateY(-5px) scale(1.03);
+}
+
+.tp-price-box h4 {
+  margin-bottom: 10px;
+  color: #b1581c;
+}
+
+/* ===================
+   ФОРМА
+=================== */
+.tp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 400px;
+}
+
+.tp-input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  transition: box-shadow 0.3s ease;
+}
+
+.tp-input:focus {
+  outline: none;
+  box-shadow: 0 0 8px #e69a2e;
+}
+
+/* ===================
+   КОМАНДА
+=================== */
+.tp-team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.tp-team-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.tp-team-card:hover {
+  transform: scale(1.05);
+}
+
+.tp-team-card img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+/* ===================
+   РЕГИСТРАЦИЯ
+=================== */
+.tp-reg-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.tp-reg-card {
+  background: linear-gradient(135deg, #e6a243, #c76b2c);
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  width: 220px;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  animation: pulse 4s infinite;
+}
+
+.tp-reg-card img {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+/* ===================
+   АДАПТИВНОСТЬ
+=================== */
+@media (max-width: 768px) {
+  .tp-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .tp-img {
+    max-width: 200px;
+  }
+
+  .tp-reg-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}

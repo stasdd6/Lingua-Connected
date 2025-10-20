@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регистрация преподавателя</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Lingua Connect</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Главная</a>
+        <a href="tutor.html" class="nav-link">Репетиторы</a>
+        <a href="rating.html" class="nav-link">Рейтинг</a>
+        <a href="top5.html" class="nav-link">Топ 5</a>
+        <a href="team.html" class="nav-link">Команда</a>
+        <a href="register.html" class="nav-link active">Регистрация</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Регистрация преподавателя</h1>
+      <p>Станьте частью нашей команды преподавателей</p>
+    </div>
+  </header>
+
+  <section class="register-section">
+    <div class="container">
+      <form class="register-form">
+        <div class="form-group">
+          <label for="name">ФИО</label>
+          <input type="text" id="name" name="name" required class="form-input">
+        </div>
+        
+        <div class="form-group">
+          <label for="subject">Предмет преподавания</label>
+          <input type="text" id="subject" name="subject" required class="form-input">
+        </div>
+
+        <div class="form-group">
+          <label for="experience">Опыт преподавания (лет)</label>
+          <input type="number" id="experience" name="experience" required class="form-input">
+        </div>
+
+        <div class="form-group">
+          <label for="education">Образование</label>
+          <textarea id="education" name="education" required class="form-input"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Телефон</label>
+          <input type="tel" id="phone" name="phone" required class="form-input" pattern="+7[0-9]{10}">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required class="form-input">
+        </div>
+
+        <div class="form-group">
+          <label for="price">Стоимость занятия (тенге)</label>
+          <input type="number" id="price" name="price" required class="form-input">
+        </div>
+
+        <div class="form-group">
+          <label for="schedule">Предпочтительное расписание</label>
+          <textarea id="schedule" name="schedule" required class="form-input"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="about">О себе</label>
+          <textarea id="about" name="about" required class="form-input"></textarea>
+        </div>
+
+        <a href="teacher.html" class="btn btn-large">Зарегистрироваться</a>
+      </form>
+    </div>
+  </section>
+
+  <footer class="cta">
+    <h2>Остались вопросы?</h2>
+    <p>Свяжитесь с нашей командой поддержки</p>
+    <a href="team.html" class="btn">Связаться с поддержкой</a>
+  </footer>
+</body>
+</html>

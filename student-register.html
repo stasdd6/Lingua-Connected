@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регистрация ученика</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Lingua Connect</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Главная</a>
+        <a href="tutor.html" class="nav-link">Репетиторы</a>
+        <a href="rating.html" class="nav-link active">Рейтинг</a>
+        <a href="top5.html" class="nav-link">Топ 5</a>
+        <a href="team.html" class="nav-link">Команда</a>
+        <a href="register.html" class="nav-link active">Регистрация</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Регистрация ученика</h1>
+      <p>Начните свой путь к успеху</p>
+    </div>
+  </header>
+
+  <section class="register-section">
+    <div class="container">
+      <form class="register-form">
+        <div class="form-group">
+          <label for="name">ФИО</label>
+          <input type="text" id="name" name="name" required class="form-input">
+        </div>
+        
+        <div class="form-group">
+          <label for="age">Возраст</label>
+          <input type="number" id="age" name="age" required class="form-input">
+        </div>
+
+        <div class="form-group">
+          <label for="grade">Класс</label>
+          <select id="grade" name="grade" required class="form-input">
+            <option value="">Выберите класс</option>
+            <option value="1">1 класс</option>
+            <option value="2">2 класс</option>
+            <option value="3">3 класс</option>
+            <option value="4">4 класс</option>
+            <option value="5">5 класс</option>
+            <option value="6">6 класс</option>
+            <option value="7">7 класс</option>
+            <option value="8">8 класс</option>
+            <option value="9">9 класс</option>
+            <option value="10">10 класс</option>
+            <option value="11">11 класс</option>
+            <option value="student">Студент</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="subjects">Интересующие предметы</label>
+          <input type="text" id="subjects" name="subjects" required class="form-input" placeholder="Например: математика, физика">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Телефон</label>
+          <input type="tel" id="phone" name="phone" required class="form-input" pattern="+7[0-9]{10}">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required class="form-input">
+        </div>
+
+        <div class="form-group">
+          <label for="goal">Цель обучения</label>
+          <textarea id="goal" name="goal" required class="form-input" placeholder="Опишите, чего хотите достичь"></textarea>
+        </div>
+
+        <a href="teacher.html" class="btn btn-large">Зарегистрироваться</a>
+      </form>
+    </div>
+  </section>
+
+  <footer class="cta">
+    <h2>Остались вопросы?</h2>
+    <p>Свяжитесь с нашей командой поддержки</p>
+    <a href="team.html" class="btn">Связаться с поддержкой</a>
+  </footer>
+</body>
+</html>
