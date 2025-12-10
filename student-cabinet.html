@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Личный кабинет ученика</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Lingua Connect</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Главная</a>
+        <a href="tutors-catalog.html" class="nav-link">Найти тьютора</a>
+        <a href="rating.html" class="nav-link">Рейтинг</a>
+        <a href="top5.html" class="nav-link">Топ 5</a>
+        <a href="team.html" class="nav-link">Команда</a>
+        <a href="student-cabinet.html" class="nav-link active">Личный кабинет</a>
+        <a href="register.html" class="nav-link">Регистрация</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="cabinet-section">
+    <div class="cabinet-container">
+      <!-- SIDEBAR MENU -->
+      <aside class="cabinet-sidebar">
+        <div class="user-profile">
+          <img src="https://cdn-icons-png.flaticon.com/512/3556/3556091.png" alt="Аватар" class="user-avatar">
+          <h3 id="user-name">Ученик</h3>
+          <p id="user-email">email@example.com</p>
+        </div>
+
+        <nav class="cabinet-menu">
+          <button class="menu-item active" data-tab="bookings">
+            📅 Мои уроки
+          </button>
+          <button class="menu-item" data-tab="favorites">
+            ❤️ Избранные тьюторы
+          </button>
+          <button class="menu-item" data-tab="history">
+            📋 История уроков
+          </button>
+          <button class="menu-item" data-tab="settings">
+            ⚙️ Настройки профиля
+          </button>
+          <button class="menu-item logout" id="logout-btn">
+            🚪 Выход
+          </button>
+        </nav>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="cabinet-content">
+        
+        <!-- BOOKINGS TAB -->
+        <div id="bookings-tab" class="cabinet-tab active">
+          <h2>Мои предстоящие уроки</h2>
+          <div id="bookings-list" class="bookings-list">
+            <!-- Bookings will be loaded here -->
+          </div>
+          <div id="no-bookings" class="empty-message" style="display: none;">
+            <p>У вас нет активных уроков</p>
+            <a href="tutors-catalog.html" class="btn">Найти тьютора</a>
+          </div>
+        </div>
+
+        <!-- FAVORITES TAB -->
+        <div id="favorites-tab" class="cabinet-tab" style="display: none;">
+          <h2>Мои избранные тьюторы</h2>
+          <div id="favorites-list" class="favorites-list">
+            <!-- Favorites will be loaded here -->
+          </div>
+          <div id="no-favorites" class="empty-message" style="display: none;">
+            <p>Вы не добавили избранных тьюторов</p>
+            <a href="tutors-catalog.html" class="btn">Выбрать тьютора</a>
+          </div>
+        </div>
+
+        <!-- HISTORY TAB -->
+        <div id="history-tab" class="cabinet-tab" style="display: none;">
+          <h2>История уроков</h2>
+          <div id="history-list" class="history-list">
+            <!-- History will be loaded here -->
+          </div>
+          <div id="no-history" class="empty-message" style="display: none;">
+            <p>У вас пока нет завершенных уроков</p>
+          </div>
+        </div>
+
+        <!-- SETTINGS TAB -->
+        <div id="settings-tab" class="cabinet-tab" style="display: none;">
+          <h2>Настройки профиля</h2>
+          <form id="settings-form" class="settings-form">
+            <div class="form-group">
+              <label for="settings-name">Имя:</label>
+              <input type="text" id="settings-name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="settings-email">Email:</label>
+              <input type="email" id="settings-email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="settings-phone">Номер телефона:</label>
+              <input type="tel" id="settings-phone" placeholder="+7 (000) 000-00-00">
+            </div>
+
+            <div class="form-group">
+              <label for="settings-level">Уровень знаний:</label>
+              <select id="settings-level">
+                <option value="beginner">Начинающий</option>
+                <option value="intermediate">Средний</option>
+                <option value="advanced">Продвинутый</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="settings-interests">Интересующие предметы:</label>
+              <textarea id="settings-interests" placeholder="Список интересующих вас предметов..."></textarea>
+            </div>
+
+            <button type="submit" class="btn">Сохранить изменения</button>
+          </form>
+        </div>
+
+      </main>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Lingua Connect. Все права защищены.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

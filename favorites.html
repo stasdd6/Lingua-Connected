@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Избранные тьюторы</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Lingua Connect</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Главная</a>
+        <a href="tutors-catalog.html" class="nav-link">Найти тьютора</a>
+        <a href="rating.html" class="nav-link">Рейтинг</a>
+        <a href="top5.html" class="nav-link">Топ 5</a>
+        <a href="team.html" class="nav-link">Команда</a>
+        <a href="student-cabinet.html" class="nav-link">Личный кабинет</a>
+        <a href="register.html" class="nav-link">Регистрация</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Мои избранные тьюторы</h1>
+      <p>Сравнивайте и выбирайте лучшего преподавателя</p>
+    </div>
+  </header>
+
+  <section class="favorites-section">
+    <div class="favorites-container">
+      <h2 style="color: #a12b2b; margin-bottom: 30px; font-size: 1.8rem;">Мои избранные тьюторы</h2>
+      <div id="favorites-content" class="favorites-content">
+        <!-- Favorites list will be loaded here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="comparison-section" id="comparison-section" style="display: none;">
+    <div class="comparison-container">
+      <h2>Сравнение тьюторов</h2>
+      <table class="comparison-table" id="comparison-table">
+        <thead>
+          <tr>
+            <th>Параметр</th>
+            <th id="compare-col-1">Тьютор 1</th>
+            <th id="compare-col-2">Тьютор 2</th>
+            <th id="compare-col-3">Тьютор 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Опыт</td>
+            <td id="compare-exp-1">-</td>
+            <td id="compare-exp-2">-</td>
+            <td id="compare-exp-3">-</td>
+          </tr>
+          <tr>
+            <td>Рейтинг</td>
+            <td id="compare-rating-1">-</td>
+            <td id="compare-rating-2">-</td>
+            <td id="compare-rating-3">-</td>
+          </tr>
+          <tr>
+            <td>Стоимость</td>
+            <td id="compare-price-1">-</td>
+            <td id="compare-price-2">-</td>
+            <td id="compare-price-3">-</td>
+          </tr>
+          <tr>
+            <td>Количество отзывов</td>
+            <td id="compare-reviews-1">-</td>
+            <td id="compare-reviews-2">-</td>
+            <td id="compare-reviews-3">-</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="comparison-actions">
+        <button id="clear-comparison-btn" class="btn btn-secondary">Очистить сравнение</button>
+        <a href="tutors-catalog.html" class="btn">Вернуться в каталог</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMPTY STATE -->
+  <section class="empty-state" id="empty-state" style="display: none;">
+    <div class="empty-state-content">
+      <h2>Избранные тьюторы пока не добавлены</h2>
+      <p>Найдите интересующего вас тьютора и добавьте его в избранное</p>
+      <a href="tutors-catalog.html" class="btn">Найти тьютора</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Lingua Connect. Все права защищены.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

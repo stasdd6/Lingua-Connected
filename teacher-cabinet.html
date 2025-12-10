@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Личный кабинет тьютора</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Lingua Connect</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Главная</a>
+        <a href="tutors-catalog.html" class="nav-link">Найти тьютора</a>
+        <a href="rating.html" class="nav-link">Рейтинг</a>
+        <a href="top5.html" class="nav-link">Топ 5</a>
+        <a href="team.html" class="nav-link">Команда</a>
+        <a href="teacher-cabinet.html" class="nav-link active">Мой кабинет</a>
+        <a href="register.html" class="nav-link">Регистрация</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="cabinet-section">
+    <div class="cabinet-container">
+      <!-- SIDEBAR MENU -->
+      <aside class="cabinet-sidebar">
+        <div class="user-profile">
+          <img src="https://cdn-icons-png.flaticon.com/512/3556/3556138.png" alt="Аватар" class="user-avatar">
+          <h3 id="tutor-name">Тьютор</h3>
+          <p id="tutor-subject-info">Предмет</p>
+        </div>
+
+        <nav class="cabinet-menu">
+          <button class="menu-item active" data-tab="schedule">
+            📅 График уроков
+          </button>
+          <button class="menu-item" data-tab="bookings">
+            📋 Бронирования
+          </button>
+          <button class="menu-item" data-tab="profile">
+            👤 Профиль
+          </button>
+          <button class="menu-item" data-tab="earnings">
+            💰 Доход
+          </button>
+          <button class="menu-item" data-tab="reviews">
+            ⭐ Отзывы
+          </button>
+          <button class="menu-item logout" id="logout-btn">
+            🚪 Выход
+          </button>
+        </nav>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="cabinet-content">
+        
+        <!-- SCHEDULE TAB -->
+        <div id="schedule-tab" class="cabinet-tab active">
+          <h2>Мой график на этой неделе</h2>
+          <div class="schedule-controls">
+            <button class="btn btn-small" id="add-schedule-btn">+ Добавить время</button>
+            <select id="week-selector" class="btn-small">
+              <option value="this-week">На эту неделю</option>
+              <option value="next-week">На следующую неделю</option>
+            </select>
+          </div>
+          
+          <div id="schedule-list" class="schedule-list">
+            <!-- Schedule will be loaded here -->
+          </div>
+
+          <!-- ADD TIME MODAL -->
+          <div id="add-time-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+              <span class="modal-close">&times;</span>
+              <h3>Добавить время доступности</h3>
+              <form id="add-time-form">
+                <div class="form-group">
+                  <label for="slot-date">Дата:</label>
+                  <input type="date" id="slot-date" required>
+                </div>
+                <div class="form-group">
+                  <label for="slot-start-time">Начало:</label>
+                  <input type="time" id="slot-start-time" required>
+                </div>
+                <div class="form-group">
+                  <label for="slot-end-time">Конец:</label>
+                  <input type="time" id="slot-end-time" required>
+                </div>
+                <button type="submit" class="btn">Добавить</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOOKINGS TAB -->
+        <div id="bookings-tab" class="cabinet-tab" style="display: none;">
+          <h2>Бронирования учеников</h2>
+          <div id="bookings-list" class="bookings-list">
+            <!-- Bookings will be loaded here -->
+          </div>
+          <div id="no-bookings" class="empty-message" style="display: none;">
+            <p>У вас нет активных бронирований</p>
+          </div>
+        </div>
+
+        <!-- PROFILE TAB -->
+        <div id="profile-tab" class="cabinet-tab" style="display: none;">
+          <h2>Мой профиль</h2>
+          <form id="profile-form" class="settings-form">
+            <div class="form-group">
+              <label for="profile-name">Имя:</label>
+              <input type="text" id="profile-name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="profile-subject">Основной предмет:</label>
+              <input type="text" id="profile-subject" required>
+            </div>
+
+            <div class="form-group">
+              <label for="profile-experience">Опыт (лет):</label>
+              <input type="number" id="profile-experience" min="0" required>
+            </div>
+
+            <div class="form-group">
+              <label for="profile-price">Стоимость за час (₸):</label>
+              <input type="number" id="profile-price" min="0" required>
+            </div>
+
+            <div class="form-group">
+              <label for="profile-bio">О себе:</label>
+              <textarea id="profile-bio" placeholder="Расскажите о вашем методе преподавания..." required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="profile-qualifications">Квалификация:</label>
+              <textarea id="profile-qualifications" placeholder="Ваши квалификации и сертификаты..."></textarea>
+            </div>
+
+            <button type="submit" class="btn">Сохранить профиль</button>
+          </form>
+        </div>
+
+        <!-- EARNINGS TAB -->
+        <div id="earnings-tab" class="cabinet-tab" style="display: none;">
+          <h2>Доход</h2>
+          <div class="earnings-stats">
+            <div class="stat-card">
+              <h3>На этой неделе</h3>
+              <p class="earnings-amount" id="earnings-week">0 ₸</p>
+            </div>
+            <div class="stat-card">
+              <h3>На этом месяце</h3>
+              <p class="earnings-amount" id="earnings-month">0 ₸</p>
+            </div>
+            <div class="stat-card">
+              <h3>Всего</h3>
+              <p class="earnings-amount" id="earnings-total">0 ₸</p>
+            </div>
+          </div>
+
+          <h3>История доходов</h3>
+          <div id="earnings-history" class="earnings-history">
+            <!-- Earnings history will be loaded here -->
+          </div>
+        </div>
+
+        <!-- REVIEWS TAB -->
+        <div id="reviews-tab" class="cabinet-tab" style="display: none;">
+          <h2>Отзывы учеников</h2>
+          <div class="reviews-stats">
+            <div class="stat-card">
+              <h3>Средний рейтинг</h3>
+              <p class="rating-big" id="avg-rating">★★★★★</p>
+            </div>
+            <div class="stat-card">
+              <h3>Всего отзывов</h3>
+              <p class="review-count" id="total-reviews">0</p>
+            </div>
+          </div>
+
+          <div id="reviews-list" class="reviews-list">
+            <!-- Reviews will be loaded here -->
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Lingua Connect. Все права защищены.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

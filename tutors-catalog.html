@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог тьюторов</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Lingua Connect</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Главная</a>
+        <a href="tutors-catalog.html" class="nav-link active">Найти тьютора</a>
+        <a href="rating.html" class="nav-link">Рейтинг</a>
+        <a href="top5.html" class="nav-link">Топ 5</a>
+        <a href="team.html" class="nav-link">Команда</a>
+        <a href="student-cabinet.html" class="nav-link">Личный кабинет</a>
+        <a href="register.html" class="nav-link">Регистрация</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Найдите идеального тьютора</h1>
+      <p>Выберите лучшего преподавателя по вашему предмету</p>
+    </div>
+  </header>
+
+  <section class="catalog-section">
+    <div class="catalog-container">
+      <!-- FILTERS SIDEBAR -->
+      <aside class="filters-sidebar">
+        <h3>Фильтры поиска</h3>
+        
+        <div class="filter-group">
+          <label for="subject-filter">Предмет:</label>
+          <select id="subject-filter">
+            <option value="">Все предметы</option>
+            <option value="english">Английский язык</option>
+            <option value="russian">Русский язык</option>
+            <option value="math">Математика</option>
+            <option value="physics">Физика</option>
+            <option value="chemistry">Химия</option>
+            <option value="biology">Биология</option>
+            <option value="history">История</option>
+            <option value="geography">География</option>
+            <option value="computer">Информатика</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="experience-filter">Опыт работы:</label>
+          <select id="experience-filter">
+            <option value="">Все уровни</option>
+            <option value="1">Более 1 года</option>
+            <option value="3">Более 3 лет</option>
+            <option value="5">Более 5 лет</option>
+            <option value="10">Более 10 лет</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="rating-filter">Рейтинг:</label>
+          <select id="rating-filter">
+            <option value="">Все оценки</option>
+            <option value="4.5">От 4.5 звезд</option>
+            <option value="4">От 4 звезд</option>
+            <option value="3.5">От 3.5 звезд</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="price-filter">Стоимость (₸):</label>
+          <input type="range" id="price-filter" min="1000" max="10000" step="500" value="10000">
+          <span id="price-value">1000 - 10000 ₸</span>
+        </div>
+
+        <button class="btn-filter" id="apply-filters">Применить фильтры</button>
+        <button class="btn-filter-reset" id="reset-filters">Очистить</button>
+      </aside>
+
+      <!-- TUTORS GRID -->
+      <main class="tutors-grid">
+        <div class="search-bar">
+          <input type="text" id="search-input" placeholder="Поиск по имени тьютора...">
+          <button id="search-btn" class="btn-search">Поиск</button>
+        </div>
+
+        <div id="tutors-container" class="tutors-list">
+          <!-- Tutors will be loaded here -->
+        </div>
+      </main>
+    </div>
+  </section>
+
+  <!-- FAVORITES LINK -->
+  <section class="favorites-link-section">
+    <a href="favorites.html" class="btn btn-favorites">❤️ Мои избранные тьюторы</a>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Lingua Connect. Все права защищены.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
