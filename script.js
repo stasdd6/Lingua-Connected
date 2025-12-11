@@ -397,7 +397,7 @@ function initTutorProfile() {
 
     const bookingId = StorageManager.bookings.add(booking);
     
-    alert(`Алина, урок с ${tutor.name} подтвержден!\n` +
+    alert(`Алина, урок с репетитором ${tutor.name} подтвержден!\n` +
           `Дата: ${booking.date}\n` +
           `Время: ${booking.time}\n` +
           `Ждем вас в ${booking.time}. Данные сохранены в вашем кабинете.`);
@@ -496,7 +496,7 @@ function initFavoritesPage() {
       const price = document.getElementById(`compare-price-${i}`);
       const reviews = document.getElementById(`compare-reviews-${i}`);
       
-      if (col) col.textContent = `Тьютор ${i}`;
+      if (col) col.textContent = `Репетитор ${i}`;
       if (exp) exp.textContent = '-';
       if (rating) rating.textContent = '-';
       if (price) price.textContent = '-';
